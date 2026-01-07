@@ -2,7 +2,7 @@ import io
 import sys
 from contextlib import redirect_stdout
 
-MAX_TIME = 2
+MAX_TIME = 0.5
 
 
 def parse_tests(tests_string: str | None):
@@ -37,3 +37,19 @@ def get_output(input_, main):
         main()
     sys.stdin = sys.__stdin__
     return f.getvalue().strip()
+
+
+def is_equal(result: str, expected: str, tol: float = 1e-9):
+    """
+    Compare outputs numerically if possible, otherwise fall back to string comparison.
+    
+    Supports single numbers or whitespace-separated lists of numbers.
+    """
+    try:
+        a_vals = [float(x) for x in result.split()]
+        e_vals = [float(x) for x in expected.split()]
+        if len(a_vals) != len(e_vals):
+            return False
+        return all(abs(a - e) <= tol for a, e in zip(a_vals, e_vals))
+    except ValueError:
+        return result.strip() == expected.strip()

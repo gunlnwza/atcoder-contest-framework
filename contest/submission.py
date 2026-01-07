@@ -2,6 +2,16 @@
 
 """
 
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
+
+
+# --- Helpers
 import sys
 
 def debug(*values, **kwargs):
@@ -16,13 +26,9 @@ def debug(*values, **kwargs):
             debug(row)
         debug(**kwargs)
         return
+
     print(*values, file=sys.stderr, **kwargs)
 
 def ii(): return int(input())
 def ia(): return list(map(int, input().split()))
-
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()
+# ---
