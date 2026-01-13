@@ -44,6 +44,8 @@ def is_equal(result: str, expected: str, tol: float = 1e-9):
     Compare outputs numerically if possible, otherwise fall back to string comparison.
     
     Supports single numbers or whitespace-separated lists of numbers.
+
+    `*` is a wildcard, used for when the problem answer is not to be compared.
     """
     try:
         a_vals = [float(x) for x in result.split()]
@@ -52,4 +54,9 @@ def is_equal(result: str, expected: str, tol: float = 1e-9):
             return False
         return all(abs(a - e) <= tol for a, e in zip(a_vals, e_vals))
     except ValueError:
-        return result.strip() == expected.strip()
+        pass
+    
+    if expected == "*":
+        return True
+
+    return result.strip() == expected.strip()
