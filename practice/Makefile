@@ -6,8 +6,8 @@ test:
 	@PYTHONPATH=. pytest --quiet $(OPT)
 
 KEEP_FILES := Makefile
-SUBMISSION_FILES := submission.py backup_submission.py
-SCRIPT_FILES := script.py backup_script.py
+SUBMISSION_FILES := submission.py
+SCRIPT_FILES := script.py
 EMPTY_FILES := 1 2 3 4
 clean:
 	@find . -maxdepth 1 -type f $(foreach f,$(KEEP_FILES), ! -name '$(f)') -exec rm {} +
