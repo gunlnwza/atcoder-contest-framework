@@ -1,5 +1,5 @@
-# atcoder-contest-framework
-Fast local testing framework for AtCoder using `pytest` and docstring-based test cases.
+# contest-framework
+Fast local testing framework for competitive programming using `pytest` and docstring-based test cases.
 
 ### Structure
 ```
