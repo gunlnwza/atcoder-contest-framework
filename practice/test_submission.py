@@ -1,5 +1,5 @@
 import pytest
-from testing import parse_tests, get_output, is_equal, DEFAULT_MAX_TIME
+from framework.testing import parse_tests, get_output, is_equal, DEFAULT_MAX_TIME
 import submission
 
 

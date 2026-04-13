@@ -5,16 +5,7 @@ Fast local testing framework for competitive programming using `pytest` and docs
 ```
 practice/
     submission.py
-
-contest/
-    A.py
-    B.py
-    C.py
-    ...
 ```
-
-Both `practice/` and `contest/` behave identically.
-The only difference is file organization.
 
 ## How It Works
 - Copy and paste sample test cases from the problem statement.
@@ -26,8 +17,7 @@ The only difference is file organization.
 1. Copy + paste the problem’s sample inputs and outputs.
 2. Add additional custom test cases if needed.
 3. Run:
-    - `make test` (for `practice/`)
-    - `make A`, `make B`, ... (for `contest/`)
+    - `make` (for `practice/`)
 
 ### Example
 A solution that adds two numbers:

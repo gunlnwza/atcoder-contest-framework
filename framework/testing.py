@@ -4,9 +4,7 @@ import json
 from pathlib import Path
 from contextlib import redirect_stdout
 
-with open(Path(__file__).parent / "config.json") as config:
-    data = json.load(config)
-    DEFAULT_MAX_TIME = data["DEFAULT_MAX_TIME"]
+DEFAULT_MAX_TIME = 2
 
 
 def parse_tests(tests_string: str | None):
