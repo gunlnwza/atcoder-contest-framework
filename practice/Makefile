@@ -1,6 +1,6 @@
 all: test
 
-OPT :=
+OPT := --maxfail=1
 test:
 	@clear
 	@echo '[ submission.py ]'
